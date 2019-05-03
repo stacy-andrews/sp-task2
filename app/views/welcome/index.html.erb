@@ -42,7 +42,7 @@ Finally email us with your link or zip file.
 <h2>Cronut acceptance widget</h2>
 <div class="challenge_box">
   <%= label_tag 'terms_checkbox' do %>
-    By selecting this checkbox, you agree that <a href="https://upload.wikimedia.org/wikipedia/commons/8/8b/April_2016_Cronut%C2%AE_2_Burnt_Vanilla_Caramel_-_photo_by_Dominique_Ansel_Bakery.jpg" target="_blank">cronuts</a> are better than <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/250px-Glazed-Donut.jpg" target="_blank">donuts</a>
+    By selecting this checkbox, you agree that <%= sanitize "<a href='#{@cronut_url}' target='_blank'>cronuts</a>" %> are better than <%= sanitize "<a href='#{@donut_url}' target='_blank'>donuts</a>" %>
   <% end %>
   <%= check_box_tag 'terms_checkbox' %>
 </div>
