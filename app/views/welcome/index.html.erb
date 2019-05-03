@@ -42,7 +42,7 @@ Finally email us with your link or zip file.
 <h2>Cronut acceptance widget</h2>
 <div class="challenge_box">
   <%= label_tag 'terms_checkbox' do %>
-    By selecting this checkbox, you agree that <%= sanitize "<a href='#{@cronut_url}' target='_blank'>cronuts</a>" %> are better than <%= sanitize "<a href='#{@donut_url}' target='_blank'>donuts</a>" %>
+    By selecting this checkbox, you agree that <%= sanitize link_to('cronuts', @cronut_url, target: 'blank'), attributes: %w(href target) %> are better than <%= sanitize link_to('donuts', @donut_url, target: "_blank"), attributes: %w(href target) %>
   <% end %>
   <%= check_box_tag 'terms_checkbox' %>
 </div>
