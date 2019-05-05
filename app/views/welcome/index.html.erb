@@ -42,9 +42,18 @@ Finally email us with your link or zip file.
 <h2>Cronut acceptance widget</h2>
 <div class="challenge_box">
   <%= label_tag 'terms_checkbox' do %>
+    <%
+      cronut_link_html = link_to(t('welcome.index.cronut_name'),
+                                 @cronut_url,
+                                 target: 'blank')
+
+      donut_link_html = link_to(t('welcome.index.donut_name'),
+                                @donut_url,
+                                target: 'blank')
+    %>
     <%= sanitize t('welcome.index.super_terms_html',
-                   cronut_link: link_to(t('welcome.index.cronut_name'), @cronut_url, target: 'blank'),
-                   donut_link:  link_to(t('welcome.index.donut_name'), @donut_url, target: '_blank')),
+                   cronut_link: cronut_link_html,
+                   donut_link:  donut_link_html),
                  attributes: %w(href target) %>
   <% end %>
   <%= check_box_tag 'terms_checkbox' %>
