@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Overrides", :type => :feature do
+RSpec.feature "Overrides" do
   scenario "Specify cronut url override will replace the cronuts href" do
     visit "/?cronut_url=https://google.com"
 
